@@ -1,3 +1,4 @@
+
 export function StickySideBar() {
   return <aside
     className="sticky inset-0 overflow-hidden">
@@ -45,3 +46,4 @@ export function TopBar() {
     </nav>
   </header>
 }
+
