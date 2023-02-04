@@ -1,4 +1,5 @@
-import { StickySideBar, TopBar } from '@components/Nav'
+import Footer from '@components/Footer'
+import { SideBar, TopBar } from '@components/Nav'
 import './globals.css'
 
 export default function RootLayout({
@@ -7,16 +8,17 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="corporate">
       {/*
         <head /> will contain the components returned by the nearest parent
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
       <body>
-        <StickySideBar />
         <TopBar />
+        <SideBar />
         {children}
+        <Footer />
       </body>
     </html>
   )

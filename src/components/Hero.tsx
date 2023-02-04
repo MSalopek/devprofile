@@ -1,18 +1,22 @@
-import Link from 'next/link'
 import { ArrowDownIcon } from '@heroicons/react/24/solid'
 
 export default function Hero() {
-  return <section className="flex flex-col h-screen items-center justify-center">
+  return <div className="h-screen bg-hero-pattern bg-cover">
+    <section className="flex flex-col items-center justify-center h-3/4">
 
-    <div className="mx-auto max-w-7xl py-16 px-6 sm:py-44 lg:px-8">
-      <div className="text-center">
-        <h1 className="mt-1 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">Take control of your team.</h1>
-        <p className="mx-auto mt-5 max-w-xl text-xl text-gray-500">Start building for free, then add a site plan to go live. Account plans unlock additional features.</p>
+      <div className="mx-auto max-w-7xl p-6 lg:px-8">
+        <div className="text-center">
+          <h1 className="mt-1 text-4xl font-bold tracking-wide text-gray-900 sm:text-5xl lg:text-6xl">Hey, I'm Matija Salopek</h1>
+          <p className="mx-auto mt-5 max-w-xl text-xl text-gray-500 leading-8 tracking-wider">Fullstack software engineer & consultant passioned about helping startups grow and building scalable solutions</p>
+        </div>
       </div>
-    </div>
-    <a href="#about"
-      className="animate-bounce rounded-full border border-indigo-300 p-1.5">
-      <ArrowDownIcon className="h-7 w-7 text-indigo-500" />
-    </a>
-  </section>
+      <a className="btn btn-accent items-center mb-12" href="/#contact">Let's chat</a>
+
+      <a href="#about"
+        className="rounded-full py-4 px-2 border-2 ">
+        <ArrowDownIcon className="h-6 w-6 mt-2 -mb-1 animate-bounce" />
+      </a>
+    </section>
+  </div>
 }
+
