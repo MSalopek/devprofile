@@ -4,12 +4,12 @@ import { IconProps, GitHubIcon, TwitterIcon } from "./Icons"
 export const socialLinks = [
   {
     name: 'Twitter',
-    href: '#',
+    href: 'https://twitter.com/0xMajita',
     icon: (props: IconProps) => <TwitterIcon {...props} />
   },
   {
     name: 'GitHub',
-    href: '#',
+    href: 'https://github.com/MSalopek',
     icon: (props: IconProps) => <GitHubIcon {...props} />
   },
 ]

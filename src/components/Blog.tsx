@@ -1,12 +1,14 @@
+import Image from "next/image";
+
 const posts: BlogPostCardList = [];
 
 interface BlogCardData {
   id: Number,
   title: string,
   href: string,
+  imageUrl: string,
   description: string,
   datetime?: string,
-  imageUrl?: string,
   readingTime?: string,
 }
 
@@ -15,7 +17,7 @@ export type BlogPostCardList = BlogCardData[];
 export function BlogPostCard(post: BlogCardData) {
   return <a href={`/blog/posts/${post.id}`} key={post.title} className="flex flex-col overflow-hidden rounded-lg shadow-lg border-base-100">
     <div className="flex-shrink-0">
-      <img className="h-48 w-full object-cover" src={post.imageUrl} alt="" />
+      <Image className="h-48 w-full object-cover" alt={post.title} src={post.imageUrl} />
     </div>
     <div className="flex flex-1 flex-col justify-between bg-base-300 p-6">
       <div className="flex-1">

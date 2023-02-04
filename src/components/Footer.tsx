@@ -1,6 +1,14 @@
+'use client';
+
+import { useForm, ValidationError } from '@formspree/react';
+import { AnimatedSuccesCheckmark } from './Icons';
+
 import { socialLinks } from "./Nav";
 
 export default function Footer() {
+  const fspree = process.env.NEXT_PUBLIC_FORMSPREE_ID || ""
+  const [state, handleSubmit] = useForm(fspree);
+
   return (
     <footer className="bg-base-200 w-full border-t border-gray-100/30" aria-labelledby="footer-heading" >
       <h2 id="footer-heading" className="sr-only">
@@ -14,28 +22,42 @@ export default function Footer() {
               Get notified about my activities, blog posts, software development tips and tricks and more.
             </p>
           </div>
-          <form className="mt-6 sm:flex sm:max-w-md lg:mt-0">
-            <label htmlFor="email-address" className="sr-only">
-              Email address
-            </label>
-            <input
-              type="email"
-              name="email-address"
-              id="email-address"
-              autoComplete="email"
-              required
-              className="w-full min-w-0 bg-base-100 appearance-none leading-7 text-gray-900 placeholder-gray-400 shadow-sm focus:border-accent focus:ring-accent sm:w-56 sm:text-sm sm:leading-6"
-              placeholder="Enter your email"
-            />
-            <div className="mt-4 sm:mt-0 sm:ml-4 sm:flex-shrink-0">
-              <button
-                type="submit"
-                className="btn bg-accent rounded-none text-white"
-              >
-                Subscribe
-              </button>
+          {state.succeeded
+            ? <div className="w-32">
+              <AnimatedSuccesCheckmark />
             </div>
-          </form>
+            : (
+              <form onSubmit={handleSubmit} className="mt-6 sm:flex sm:max-w-md lg:mt-0">
+                <div className="mt-1 hidden">
+                  <input
+                    id="type"
+                    name="type"
+                    type="text"
+                    required
+                    defaultValue={"subscribe"}
+                  />
+                </div>
+                <label htmlFor="email" className="sr-only">
+                  Email address
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  autoComplete="email"
+                  required
+                  className="w-full min-w-0 bg-base-100 appearance-none leading-7 text-gray-900 placeholder-gray-400 shadow-sm focus:border-accent focus:ring-accent sm:w-56 sm:text-sm sm:leading-6"
+                  placeholder="Enter your email"
+                />
+                <div className="mt-4 sm:mt-0 sm:ml-4 sm:flex-shrink-0">
+                  <button
+                    type="submit"
+                    className="btn bg-accent rounded-none text-white"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+              </form>)}
         </div>
         <div className="mt-10 border-t border-gray-100/30 pt-8 md:flex md:items-center md:justify-between">
           <div className="flex space-x-6 md:order-2">
@@ -50,7 +72,7 @@ export default function Footer() {
             &copy; 2020-2023 MSalopek. All rights reserved.
           </p>
         </div>
-          <a className="text-xs leading-5 text-gray-500" href="http://www.freepik.com">Images by rawpixel.com / Freepik</a>
+        <a className="text-xs leading-5 text-gray-500" href="http://www.freepik.com">Images by rawpixel.com / Freepik</a>
       </div>
     </footer>
   )

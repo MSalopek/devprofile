@@ -1,18 +1,11 @@
 'use client';
 
 import { useForm, ValidationError } from '@formspree/react';
+import { AnimatedSuccesCheckmark } from './Icons';
 
-function SuccesCheckmark() {
-  return (
-    <svg className="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-      <circle className="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
-      <path className="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
-    </svg>
-  );
-}
 
 export default function Contact() {
-  const fspree = process.env.NEXT_PUBLIC_FORMSPREE_ID || "" 
+  const fspree = process.env.NEXT_PUBLIC_FORMSPREE_ID || ""
   const [state, handleSubmit] = useForm(fspree);
 
   return (
@@ -32,11 +25,20 @@ export default function Contact() {
           </div>
         </div>
         {state.succeeded
-          ? <SuccesCheckmark />
+          ? <AnimatedSuccesCheckmark />
           : (
             <form onSubmit={handleSubmit} className="mt-12 border dark:border-gray-500 shadow-lg bg-base-300">
               <div className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8 p-8">
                 <div className="sm:col-span-2">
+                  <div className="mt-1 hidden">
+                    <input
+                      id="type"
+                      name="type"
+                      type="text"
+                      required
+                      defaultValue={"contact"}
+                    />
+                  </div>
                   <label htmlFor="name" className="block text-gray-700 dark:text-gray-300">
                     Your Name
                   </label>
@@ -45,6 +47,7 @@ export default function Contact() {
                       id="name"
                       name="name"
                       type="text"
+                      required
                       className="block w-full py-3 px-4 shadow-sm focus:border-accent focus:ring-accent dark:bg-base-100"
                     />
                   </div>
@@ -59,6 +62,7 @@ export default function Contact() {
                       name="email"
                       type="email"
                       autoComplete="email"
+                      required
                       className="block w-full py-3 px-4 shadow-sm focus:border-accent focus:ring-accent dark:bg-base-100"
                     />
                     <ValidationError
@@ -77,6 +81,7 @@ export default function Contact() {
                       id="message"
                       name="message"
                       rows={4}
+                      required
                       className="block w-full py-3 px-4 shadow-sm focus:border-accent focus:ring-accent dark:bg-base-100"
                       defaultValue={''}
                     />
