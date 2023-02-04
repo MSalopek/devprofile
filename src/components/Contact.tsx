@@ -9,7 +9,7 @@ export default function Contact() {
   const [state, handleSubmit] = useForm(fspree);
 
   return (
-    <div id="contact" className="w-full h-screen py-20 px-6 lg:px-8 lg:py-24">
+    <div id="contact" className="w-full h-screen lg:h-screen py-16 px-6 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-xl">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">

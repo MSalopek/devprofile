@@ -10,7 +10,7 @@ export default function Footer() {
   const [state, handleSubmit] = useForm(fspree);
 
   return (
-    <footer className="bg-base-200 w-full border-t border-gray-100/30" aria-labelledby="footer-heading" >
+    <footer id="footer" className="bg-base-200 w-full mt-16 sm:mt-16 border-t border-gray-100/30" aria-labelledby="footer-heading" >
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
