@@ -12,23 +12,11 @@ module.exports = {
   },
   daisyui: {
     themes:[
-      {
-        light: {
-          ...require("daisyui/src/colors/themes")["[data-theme=light]"],
-          ".btn": {
-            "transition-duration": "100ms",
-          }
-        },
-        dark: {
-          ...require("daisyui/src/colors/themes")["[data-theme=dark]"],
-          ".btn": {
-            "transition-duration": "1000ms",
-          }
-        },
-      }
+      "light",
+      "dark",
     ],
-    darkMode: ['class', '[data-theme="dark"]']
   },
+  darkMode: ['class', '[data-theme="dark"]'],
   plugins: [
     require("daisyui"),
     require('@tailwindcss/forms'),

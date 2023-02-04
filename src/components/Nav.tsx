@@ -1,3 +1,7 @@
+'use client';
+
+import { MoonIcon, SunIcon } from '@heroicons/react/24/solid';
+import { useTheme } from 'next-themes'
 import Image from "next/image"
 import { IconProps, GitHubIcon, TwitterIcon } from "./Icons"
 
@@ -42,29 +46,74 @@ export function TopBar() {
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
             </label>
-            <ul tabIndex={0} className="menu menu-normal dropdown-content mt-3 p-2 shadow-lg bg-base-100 border border-base-300 w-52 space-y-1.5 dark:text-gray-200">
+            <ul tabIndex={0} className="menu menu-normal dropdown-content mt-3 p-1.5 shadow-lg bg-base-100 border border-base-300 w-52 space-y-1.5 dark:text-gray-200">
               <li><a className="py-4 w-full h-full text-lg tracking-tight rounded-none" href="/">Home</a></li>
               <li><a className="py-4 w-full h-full text-lg tracking-tight rounded-none" href="/#about">About</a></li>
               <li><a className="py-4 w-full h-full text-lg tracking-tight rounded-none" href="/blog">Blog</a></li>
               <li><a className="py-4 w-full h-full text-lg tracking-tight rounded-none" href={process.env.NEXT_CALENDLY_LINK}>Book a Consult</a></li>
+              <li title="Change Theme" className="flex">
+                <MobileThemeToggler />
+              </li>
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl dark:text-white">MSalopek</a>
+          <a href="/" className="btn btn-ghost hover:bg-inherit normal-case text-xl dark:text-white rounded-none">MSalopek</a>
         </div>
         <div className="navbar-end flex lg:hidden">
           <a href="/#contact" className="btn bg-accent rounded-none border-none text-white hover:text-white">Contact</a>
         </div>
         <div className="navbar-end hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 space-x-2 dark:text-gray-200">
-            <li><a href="/">Home</a></li>
-            <li><a href="/#about">About</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href={process.env.NEXT_CALENDLY_LINK}>Book a Consult</a></li>
+          <ul className="menu menu-horizontal dark:text-gray-200 mr-2 gap-x-1">
+            <li title="Change Theme">
+              <ThemeToggler />
+            </li>
+            <li><a className="px-3" href="/">Home</a></li>
+            <li><a className="px-3" href="/#about">About</a></li>
+            <li><a className="px-3" href="/blog">Blog</a></li>
+            <li><a className="px-3" href={process.env.NEXT_CALENDLY_LINK}>Book a Consult</a></li>
           </ul>
           <a href="/#contact" className="btn btn-accent rounded-none items-center">Contact</a>
         </div>
       </div>
-    </div>
-  </div>
+    </div >
+  </div >
+}
 
+function ThemeToggler() {
+  const { theme, setTheme } = useTheme()
+
+  return <>
+    {
+      theme === 'dark'
+        ? <button onClick={() => { setTheme('light') }} className="btn btn-ghost p-1.5 rounded-full">
+          <SunIcon className="w-5 h-5" />
+        </button>
+        : <button onClick={() => { setTheme('dark') }} className="btn btn-ghost p-1.5 rounded-full">
+          <MoonIcon className="w-4 h-4" />
+        </button>
+    }
+  </>
+}
+
+function MobileThemeToggler() {
+  const { theme, setTheme } = useTheme()
+
+  const toggle = () => {
+    if (theme === 'dark') {
+      setTheme('light')
+    } else {
+      setTheme('dark')
+    }
+  }
+
+  return <button onClick={() => { toggle() }} className="w-full">
+    <p>Theme:</p>
+    {
+      theme === 'dark'
+        ?
+        <MoonIcon className="w-4 h-4" />
+        :
+        <SunIcon className="w-5 h-5" />
+
+    }
+  </button>
 }
