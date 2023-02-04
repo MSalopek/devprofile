@@ -11,8 +11,23 @@ module.exports = {
     },
   },
   daisyui: {
-    themes: ["light", "dark", "cupcake", "bumblebee", "emerald", "corporate", "synthwave", "retro", "cyberpunk", "valentine", "halloween", "garden", "forest", "aqua", "lofi", "pastel", "fantasy", "wireframe", "black", "luxury", "dracula", "cmyk", "autumn", "business", "acid", "lemonade", "night", "coffee", "winter",
+    themes:[
+      {
+        light: {
+          ...require("daisyui/src/colors/themes")["[data-theme=light]"],
+          ".btn": {
+            "transition-duration": "100ms",
+          }
+        },
+        dark: {
+          ...require("daisyui/src/colors/themes")["[data-theme=dark]"],
+          ".btn": {
+            "transition-duration": "1000ms",
+          }
+        },
+      }
     ],
+    darkMode: ['class', '[data-theme="dark"]']
   },
   plugins: [
     require("daisyui"),
