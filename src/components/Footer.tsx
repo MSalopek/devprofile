@@ -50,6 +50,7 @@ export default function Footer() {
             &copy; 2020-2023 MSalopek. All rights reserved.
           </p>
         </div>
+          <a className="text-xs leading-5 text-gray-500" href="http://www.freepik.com">Images by rawpixel.com / Freepik</a>
       </div>
     </footer>
   )

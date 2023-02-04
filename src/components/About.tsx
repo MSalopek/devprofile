@@ -75,7 +75,7 @@ function Intro() {
       </p>
 
       <p className="mt-4 text-lg leading-6 tracking-normal text-gray-600 dark:text-gray-300">
-        I'm open to talk about your ideas and I always strive to can contribute, learn and grow. If you think we are a good match and you could use my skills and experience don't hesitate to send me a message, or Book a Consultation with me.
+        I'm open to talk about your ideas and I always strive to can contribute, learn and grow. If you think we are a good match and you could use my skills and experience don't hesitate to send me a message, or book a consultation with me.
       </p>
     </div>
     <a

@@ -25,7 +25,7 @@ export default function Contact() {
             </h2>
 
             <p className="text-lg mt-3 text-gray-600 dark:text-gray-300">
-              Get in touch using this form. Alternatively, you can always reach me on my socials or shoot me an email at
+              Get in touch using this form. Alternatively, you can always reach me on my socials or shoot me an email at{' '}
               <span><a className="underline" href="mailto:msalopek@pm.me?title=Hi, Matija!">msalopek@pm.me</a></span>
             </p>
           </div>
@@ -33,7 +33,7 @@ export default function Contact() {
         {state.succeeded
           ? <SuccesCheckmark />
           : (
-            <form onSubmit={handleSubmit} className="mt-12 border dark:border-gray-500 shadow-lg">
+            <form onSubmit={handleSubmit} className="mt-12 border dark:border-gray-500 shadow-lg bg-base-300">
               <div className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8 p-8">
                 <div className="sm:col-span-2">
                   <label htmlFor="name" className="block text-gray-700 dark:text-gray-300">
