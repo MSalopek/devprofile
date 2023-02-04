@@ -2,15 +2,15 @@ import { socialLinks } from "./Nav";
 
 export default function Footer() {
   return (
-    <footer className="bg-white w-full border" aria-labelledby="footer-heading" >
+    <footer className="bg-base-200 w-full border-t border-gray-100/30" aria-labelledby="footer-heading" >
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
       <div className="container mx-auto px-6 pb-8 pt-16 lg:px-8">
         <div className="lg:flex lg:items-center lg:justify-between">
           <div>
-            <h3 className="text-sm font-semibold leading-6 text-gray-900">Subscribe to my newsletter</h3>
-            <p className="mt-2 text-sm leading-6 text-gray-600">
+            <h3 className="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-200">Subscribe to my newsletter</h3>
+            <p className="mt-2 text-sm leading-6 text-gray-600 dark:text-gray-400">
               Get notified about my activities, blog posts, software development tips and tricks and more.
             </p>
           </div>
@@ -24,20 +24,20 @@ export default function Footer() {
               id="email-address"
               autoComplete="email"
               required
-              className="w-full min-w-0 appearance-none leading-7 text-gray-900 placeholder-gray-400 shadow-sm focus:border-accent focus:ring-accent sm:w-56 sm:text-sm sm:leading-6"
+              className="w-full min-w-0 bg-base-100 appearance-none leading-7 text-gray-900 placeholder-gray-400 shadow-sm focus:border-accent focus:ring-accent sm:w-56 sm:text-sm sm:leading-6"
               placeholder="Enter your email"
             />
             <div className="mt-4 sm:mt-0 sm:ml-4 sm:flex-shrink-0">
               <button
                 type="submit"
-                className="btn bg-accent text-white"
+                className="btn bg-accent rounded-none text-white"
               >
                 Subscribe
               </button>
             </div>
           </form>
         </div>
-        <div className="mt-10 border-t border-gray-900/10 pt-8 md:flex md:items-center md:justify-between">
+        <div className="mt-10 border-t border-gray-100/30 pt-8 md:flex md:items-center md:justify-between">
           <div className="flex space-x-6 md:order-2">
             {socialLinks.map((item) => (
               <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500">
