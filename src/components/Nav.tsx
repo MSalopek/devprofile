@@ -83,7 +83,8 @@ function ThemeToggler() {
 
   return <>
     {
-      theme === 'dark'
+      // dark theme is set as default
+      (!theme || theme === 'dark' || theme === 'system')
         ? <button onClick={() => { setTheme('light') }} className="btn btn-ghost p-1.5 rounded-full">
           <SunIcon className="w-5 h-5" />
         </button>
@@ -98,7 +99,8 @@ function MobileThemeToggler() {
   const { theme, setTheme } = useTheme()
 
   const toggle = () => {
-    if (theme === 'dark') {
+    // dark theme is set as default
+    if (!theme || theme === 'dark' || theme === 'system') {
       setTheme('light')
     } else {
       setTheme('dark')
