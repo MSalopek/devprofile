@@ -9,8 +9,8 @@ export default function Contact() {
   const [state, handleSubmit] = useForm(fspree);
 
   return (
-    <div id="contact" className="w-full h-screen lg:h-screen py-16 px-6 lg:px-8 lg:py-24">
-      <div className="mx-auto max-w-xl">
+    <div id="contact" className="py-24">
+      <div className="mx-auto w-full h-screen lg:h-screen py-16 px-6 lg:px-8">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-5xl flex flex-col items-center gap-3">
@@ -125,5 +125,6 @@ export default function Contact() {
           )}
       </div>
     </div>
+
   )
 }
