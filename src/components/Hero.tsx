@@ -13,8 +13,8 @@ export default function Hero() {
       <a className="btn btn-accent rounded-none items-center mb-12" href="/#contact">Let's chat</a>
 
       <a href="#about"
-        className="rounded-full py-4 px-2 border-2 ">
-        <ArrowDownIcon className="h-6 w-6 mt-2 -mb-1 animate-bounce" />
+        className="rounded-full py-4 px-2 border-2 border-gray-500">
+        <ArrowDownIcon className="h-6 w-6 mt-2 -mb-1 animate-bounce text-black dark:text-gray-200" />
       </a>
     </section>
   </div>
