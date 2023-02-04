@@ -10,19 +10,17 @@ export default function Contact() {
 
   return (
     <div id="contact" className="py-24">
-      <div className="mx-auto w-full h-screen lg:h-screen py-16 px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-5xl flex flex-col items-center gap-3">
-              Contact
-              <div className="w-8 p-1 bg-accent/60" />
-            </h2>
+      <div className="mx-auto max-w-3xl h-screen lg:h-screen px-6 lg:px-8">
+        <div className="mx-auto max-w-xl text-center">
+          <h2 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-5xl flex flex-col items-center gap-3">
+            Contact
+            <div className="w-8 p-1 bg-accent/60" />
+          </h2>
 
-            <p className="text-lg mt-3 text-gray-600 dark:text-gray-300">
-              Get in touch using this form. Alternatively, you can always reach me on my socials or shoot me an email at{' '}
-              <span><a className="underline" href="mailto:msalopek@pm.me?title=Hi, Matija!">msalopek@pm.me</a></span>
-            </p>
-          </div>
+          <p className="text-lg mt-3 text-gray-600 dark:text-gray-300">
+            Get in touch using this form. Alternatively, you can always reach me on my socials or shoot me an email at{' '}
+            <span><a className="underline" href="mailto:msalopek@pm.me?title=Hi, Matija!">msalopek@pm.me</a></span>
+          </p>
         </div>
         {state.succeeded
           ? <AnimatedSuccesCheckmark />
