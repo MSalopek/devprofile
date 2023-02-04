@@ -1,7 +1,8 @@
 const toolsAndSkills = [
   "Go",
-  "Python",
+  "CosmosSDK",
   "Solidity",
+  "Python",
   "Node",
   "JS/TS",
   "React",
@@ -10,7 +11,6 @@ const toolsAndSkills = [
   "Linux",
   "k8s",
   "IPFS",
-  "CosmosSDK",
   "PostgreSQL",
   "MongoDB",
   "Redis",
