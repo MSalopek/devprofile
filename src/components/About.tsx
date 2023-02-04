@@ -1,6 +1,7 @@
 const toolsAndSkills = [
   "Go",
   "Python",
+  "Solidity",
   "Node",
   "JS/TS",
   "React",
