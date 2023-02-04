@@ -1,4 +1,23 @@
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
+const toolsAndSkills = [
+  "Go",
+  "Python",
+  "Node",
+  "JS/TS",
+  "React",
+  "Next.js",
+  "Docker",
+  "Linux",
+  "k8s",
+  "IPFS",
+  "CosmosSDK",
+  "PostgreSQL",
+  "MongoDB",
+  "Redis",
+  "Nginx",
+  "Figma",
+  "Supabase",
+  "Pocketbase"
+]
 
 export function AboutMe() {
   return (
@@ -25,28 +44,6 @@ export function AboutMe() {
     </div>
   )
 }
-
-const toolsAndSkills = [
-  "Go",
-  "Python",
-  "Node",
-  "JS/TS",
-  "React",
-  "Next.js",
-  "Docker",
-  "Linux",
-  "k8s",
-  "IPFS",
-  "CosmosSDK",
-  "PostgreSQL",
-  "MongoDB",
-  "Redis",
-  "Nginx",
-  "Figma",
-  "Supabase",
-  "Pocketbase"
-]
-
 
 function Skills() {
   return <div className="flex flex-col lg:max-w-md gap-4">
@@ -86,10 +83,3 @@ function Intro() {
     </a>
   </div>
 }
-
-
-// I'm a Frontend Web Developer building the Front-end of Websites and Web Applications that leads to the success of the overall product. Check out some of my work in the Projects section.
-
-// I also like sharing content related to the stuff that I have learned over the years in Web Development so it can help other people of the Dev Community. Feel free to Connect or Follow me on my Linkedin where I post useful content related to Web Development and Programming
-
-// I'm open to talk about your ideas and I always strive to can contribute, learn and grow. If you think we are a good match and you could use my skills and experience don't hesitate to send me a message, or Book a Consultation with me.
